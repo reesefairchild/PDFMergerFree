@@ -1,5 +1,10 @@
 const { PDFDocument } = PDFLib;
 
+document.getElementById("resetBtn").addEventListener("click", () => {
+  document.getElementById("pdf1").value = "";
+  document.getElementById("pdf2").value = "";
+});
+
 document.getElementById("mergeBtn").addEventListener("click", async () => {
   const file1 = document.getElementById("pdf1").files[0];
   const file2 = document.getElementById("pdf2").files[0];
