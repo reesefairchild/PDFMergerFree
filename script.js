@@ -12,8 +12,12 @@ document.getElementById("mergeBtn").addEventListener("click", async () => {
   const pdfBytes1 = await file1.arrayBuffer();
   const pdfBytes2 = await file2.arrayBuffer();
 
-  const pdfDoc1 = await PDFDocument.load(pdfBytes1);
-  const pdfDoc2 = await PDFDocument.load(pdfBytes2);
+  const pdfDoc1 = await PDFDocument.load(pdfBytes1, {
+    ignoreEncryption: true
+  });
+  const pdfDoc2 = await PDFDocument.load(pdfBytes2, {
+    ignoreEncryption: true
+  });
 
   const mergedPdf = await PDFDocument.create();
 
